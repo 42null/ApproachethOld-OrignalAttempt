@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using StaticHelpers;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,7 +29,8 @@ public class PopupProperties : MonoBehaviour
         
         corePopup = gameObject;
 
-        temperatureTextBox = GameObject.FindWithTag("TemperatureTextField").GetComponent<Text>();
+        // temperatureTextBox = GameObject.FindWithTag("TemperatureTextField").GetComponent<Text>();
+        temperatureTextBox = ComponentFinder.FindComponentsInChildrenWithTag<Text>(corePopup, "TemperatureTextField")[0];
         updateTimer = updateInterval; //So the time update run happens immediately
     }
     void Update()
@@ -43,6 +45,8 @@ public class PopupProperties : MonoBehaviour
                 {
                     lastValue = newValue;
                     temperatureTextBox.text = lastValue.ToString();
+                    // String randForName = Random.Range(0, 100).ToString();
+                    // temperatureTextBox.text = "A"+temperatureTextBox.GetHashCode().ToString();
                 }
             }
             else

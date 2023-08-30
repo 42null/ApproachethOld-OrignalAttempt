@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class CoreScript : MonoBehaviour, IPointerClickHandler
 {
@@ -56,9 +57,13 @@ public class CoreScript : MonoBehaviour, IPointerClickHandler
         spawnedPopup = Instantiate(leftClickPopupMenu, screenPosition, Quaternion.identity);
         spawnedPopup.transform.SetParent(FindObjectOfType<Canvas>().transform, true);
 
+        // String randForName = Random.Range(0, 100).ToString();
+        // spawnedPopup.name = "spawnedPopup:"+randForName;
+        
         popupProperties = spawnedPopup.GetComponent<PopupProperties>();
         popupProperties.temperatureScript = temperatureScript;
-        // popupProperties.temperatureScript.updateInterval = 1f;
+        Debug.Log("spawnedPopup = "+spawnedPopup.GetHashCode());
+
 
     }
 

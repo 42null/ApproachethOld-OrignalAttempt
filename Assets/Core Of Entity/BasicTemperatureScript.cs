@@ -4,7 +4,7 @@ public class BasicTemperatureScript : MonoBehaviour, TemperatureScript
 {
     // Adjustable public variables for temperature
     public float minTemperature = 0f; //The min temperature before things fail 
-    public float maxTemperature = 100f; //The max temperature before things break
+    public float maxTemperature = 999f; //The max temperature before things break
     public float currentTemperature = 25f; //The current level of temperature stored from the last calculation
 
     // Stored primary variables
