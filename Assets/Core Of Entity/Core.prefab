@@ -53,7 +53,7 @@ MonoBehaviour:
   chatterScript: {fileID: 793949580822406084}
   reportScript: {fileID: 0}
   leftClickPopupMenu: {fileID: 3310350521083577281, guid: 1db25cf9005e8400faac3bb31c226612, type: 3}
-  verticalOffset: 20
+  verticalOffset: 30
   directableSpeed: 5
 --- !u!114 &8769722623648631433
 MonoBehaviour:

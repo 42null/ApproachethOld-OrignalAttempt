@@ -10,6 +10,7 @@ public class CoreScript : MonoBehaviour, IPointerClickHandler
     
     
     // Reference to components
+    public String name;
     public BasicTemperatureScript temperatureScript;
     public BasicMassScript massScript;
     public BasicChatterScript chatterScript;
@@ -24,12 +25,13 @@ public class CoreScript : MonoBehaviour, IPointerClickHandler
     public float verticalOffset = 20.0f;
     
     public float directableSpeed = 5f;
+    
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left) { //Left click
             float triggeringElementHeight = transform.parent.GetComponent<Renderer>().bounds.size.y;
-            Vector3 offset = new Vector3(0, ConstantsScript.scaledWorldEditorHeightToScreenHeight(triggeringElementHeight), 0);
+            Vector3 offset = new Vector3(0, ConstantsScript.scaledWorldEditorHeightToScreenHeight(triggeringElementHeight)/2+verticalOffset, 0);
             if (spawnedPopup == null)
             {
                 spawnCorePopup(offset, 110f); //Open if not already open
@@ -57,12 +59,11 @@ public class CoreScript : MonoBehaviour, IPointerClickHandler
         spawnedPopup = Instantiate(leftClickPopupMenu, screenPosition, Quaternion.identity);
         spawnedPopup.transform.SetParent(FindObjectOfType<Canvas>().transform, true);
 
-        // String randForName = Random.Range(0, 100).ToString();
-        // spawnedPopup.name = "spawnedPopup:"+randForName;
-        
         popupProperties = spawnedPopup.GetComponent<PopupProperties>();
+        popupProperties.elementName = name;
+        
         popupProperties.temperatureScript = temperatureScript;
-        Debug.Log("spawnedPopup = "+spawnedPopup.GetHashCode());
+        
 
 
     }

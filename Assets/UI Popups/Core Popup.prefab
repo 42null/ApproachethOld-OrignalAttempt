@@ -457,8 +457,10 @@ MonoBehaviour:
   popupWindowHeight: 100
   popupWindowWidth: 70
   corePopup: {fileID: 0}
+  elementName: Element default name
   temperatureReport: {fileID: 0}
   temperatureScript: {fileID: 0}
+  nameInputField: {fileID: 9195746812045141521}
   temperatureTextBox: {fileID: 0}
   updateInterval: 1
 --- !u!222 &8546557084947293831

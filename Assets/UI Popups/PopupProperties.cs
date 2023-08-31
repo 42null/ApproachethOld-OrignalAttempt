@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using StaticHelpers;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,8 +13,11 @@ public class PopupProperties : MonoBehaviour
     public float popupWindowHeight = 100;
     public float popupWindowWidth  = 70;
     public GameObject corePopup;
+    public string elementName = "Element default name";
+    
     public GameObject temperatureReport;
     public BasicTemperatureScript temperatureScript;
+    public TextMeshProUGUI nameInputField;
 
     public Text temperatureTextBox;
     
@@ -29,12 +33,14 @@ public class PopupProperties : MonoBehaviour
         
         corePopup = gameObject;
 
-        // temperatureTextBox = GameObject.FindWithTag("TemperatureTextField").GetComponent<Text>();
+        nameInputField.text = elementName;
         temperatureTextBox = ComponentFinder.FindComponentsInChildrenWithTag<Text>(corePopup, "TemperatureTextField")[0];
         updateTimer = updateInterval; //So the time update run happens immediately
     }
     void Update()
     {
+        nameInputField.text = elementName;
+
         if (updateInterval != -1)
         {
             if (updateTimer >= updateInterval) //TODO: DO SUBSCRIBER DESIGN PATTERN FOR EFFICIENCY!!!
