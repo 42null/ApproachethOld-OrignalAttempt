@@ -14,6 +14,7 @@ public class LogicScript : MonoBehaviour
 
     void Update()
     {
+//START PAUSE/UNPAUSE
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (gameIsPaused) {
@@ -22,12 +23,17 @@ public class LogicScript : MonoBehaviour
                 pauseGame();
             }
         }
-
         if (!gameIsPaused)
         {
             timeElapsedSecs += Time.deltaTime;
             timeElapsed.text = (Math.Truncate(timeElapsedSecs * 100)/100).ToString();
         }
+//END PAUSE/UNPAUSE
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            
+        }
+
     }
 
     public void pauseGame()

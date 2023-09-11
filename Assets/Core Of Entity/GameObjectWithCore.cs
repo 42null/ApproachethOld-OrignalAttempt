@@ -14,10 +14,10 @@ public class GameObjectWithCore : MonoBehaviour
     private void Update()
     {
         // Example usage of the coreScript's properties
-        float currentTemperature = coreScript.temperatureScript.getCurrentTemperature();
-        float mass = coreScript.massScript.getCurrentMass();
-        float chatter = coreScript.chatterScript.getCurrentChatter();
-        float directableSpeed = coreScript.directableSpeed;
+        // float currentTemperature = coreScript.temperatureScript.getCurrentTemperature();
+        // float mass = coreScript.massScript.getCurrentMass();
+        // float chatter = coreScript.chatterScript.getCurrentChatter();
+        // float directableSpeed = coreScript.directableSpeed;
 
         // Your logic using these properties goes here
     }

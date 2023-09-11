@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4107504925669351614}
   m_Layer: 0
   m_Name: Core
-  m_TagString: Untagged
+  m_TagString: Core
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bedbf6834f4647538aed3b545e939745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name2: 
   temperatureScript: {fileID: 8769722623648631433}
   massScript: {fileID: 9152745877308819689}
   chatterScript: {fileID: 793949580822406084}

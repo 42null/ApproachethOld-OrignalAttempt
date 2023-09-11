@@ -10,7 +10,7 @@ public class CoreScript : MonoBehaviour, IPointerClickHandler
     
     
     // Reference to components
-    public String name;
+    public String name2;
     public BasicTemperatureScript temperatureScript;
     public BasicMassScript massScript;
     public BasicChatterScript chatterScript;
@@ -60,12 +60,14 @@ public class CoreScript : MonoBehaviour, IPointerClickHandler
         spawnedPopup.transform.SetParent(FindObjectOfType<Canvas>().transform, true);
 
         popupProperties = spawnedPopup.GetComponent<PopupProperties>();
-        popupProperties.elementName = name;
+        popupProperties.elementName = name2;
+        
+        popupProperties.OnMenuValueChanged += (newName) =>
+        {
+            name2 = newName;
+        };
         
         popupProperties.temperatureScript = temperatureScript;
-        
-
-
     }
 
     public static void closeCorePopup(GameObject popupGameElement)

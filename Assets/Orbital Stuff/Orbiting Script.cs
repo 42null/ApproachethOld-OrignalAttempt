@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class OrbitingScript : MonoBehaviour
 {
@@ -28,14 +29,21 @@ public class OrbitingScript : MonoBehaviour
         transform.position = orbiting.position + offset;
         
         // Rotation
-        if (rotationSpeed == 0.0f) //Tidally locked
+        if (rotationSpeed == 0) //Tidally locked
         {
             Vector3 toOrbiting = orbiting.position - transform.position;
             float targetRotation = Mathf.Atan2(toOrbiting.y, toOrbiting.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, targetRotation + rotationOffset);
+            
+            Vector3 currentRotation = gameObject.transform.rotation.eulerAngles;
+
+            Quaternion newRotation = Quaternion.Euler(currentRotation.x, currentRotation.y, targetRotation + rotationOffset);
+            transform.rotation = newRotation;
         }
         else
         {
+            // Debug.Log("2"+gameObject.transform.rotation.x);
+            // Quaternion currentRotation = gameObject.transform.rotation;
+            // transform.rotation = Quaternion.Euler(currentRotation.x, currentRotation.y, rotationSpeed * Time.deltaTime);
             transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
         }
     }
