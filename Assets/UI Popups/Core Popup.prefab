@@ -457,6 +457,7 @@ MonoBehaviour:
   popupWindowWidth: 70
   corePopup: {fileID: 0}
   elementName: Element default name
+  identifierImage: {fileID: 6444541505551532448}
   temperatureReport: {fileID: 0}
   temperatureScript: {fileID: 0}
   nameInputField: {fileID: 0}
@@ -666,7 +667,7 @@ GameObject:
   - component: {fileID: 4813416920583257359}
   - component: {fileID: 6444541505551532448}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Identifier Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

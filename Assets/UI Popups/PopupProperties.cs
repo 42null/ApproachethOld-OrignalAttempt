@@ -16,6 +16,7 @@ public class PopupProperties : MonoBehaviour
     public float popupWindowWidth  = 70;
     public GameObject corePopup;
     public string elementName = "Element default name";
+    public Image identifierImage;
     
     public GameObject temperatureReport;
     public BasicTemperatureScript temperatureScript;
@@ -78,7 +79,6 @@ public class PopupProperties : MonoBehaviour
 
     private void onNameFieldChanged(string newStringValue)
     {
-        Debug.Log("\""+newStringValue+"\"");
         elementName = newStringValue;
         OnMenuValueChanged?.Invoke(elementName);
     }

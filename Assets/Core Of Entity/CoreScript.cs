@@ -54,20 +54,22 @@ public class CoreScript : MonoBehaviour, IPointerClickHandler
         Vector3 screenPosition = Camera.main.WorldToScreenPoint(spritePosition);
         screenPosition += offset;
         screenPosition.y += popupHeight;
-        
+
         // Instantiate the UI prefab on the Canvas at the screen position
         spawnedPopup = Instantiate(leftClickPopupMenu, screenPosition, Quaternion.identity);
         spawnedPopup.transform.SetParent(FindObjectOfType<Canvas>().transform, true);
 
         popupProperties = spawnedPopup.GetComponent<PopupProperties>();
         popupProperties.elementName = name2;
-        
-        popupProperties.OnMenuValueChanged += (newName) =>
-        {
-            name2 = newName;
-        };
-        
+
+        popupProperties.OnMenuValueChanged += (newName) => { name2 = newName; };
+
         popupProperties.temperatureScript = temperatureScript;
+
+        //Set window identifier icon to sprite picture
+        // popupProperties.identifierImage = ;
+        // Assign the sprite to the Image component's sprite property
+        popupProperties.identifierImage.sprite = gameObject.GetComponentInParent<SpriteRenderer>().sprite;
     }
 
     public static void closeCorePopup(GameObject popupGameElement)
